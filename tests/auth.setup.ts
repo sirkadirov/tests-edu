@@ -25,5 +25,6 @@ setup('authenticate', async ({ page }) => {
     const scheduleView: string = '3';
     await page.evaluate(scheduleView => localStorage.setItem('_selectedView', scheduleView), scheduleView);
 
+    await page.goto('https://pre-release.unisched.pages.dev/');
     await page.context().storageState({ path: authFile });
 });
